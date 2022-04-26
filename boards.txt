@@ -1,8 +1,85 @@
 menu.usb=USB Type
+menu.region_flags=Region
+menu.version_flags=Board version
 menu.storage=Extenal Storage
 menu.speed=CPU Speed
 
 ##############################################################
+
+# Lacuna LS300
+# ---------------------------------------
+LS300-WB55RE.name=LS300-WB55RE
+LS300-WB55RE.vid.0=0x1209
+LS300-WB55RE.pid.0=0x6674
+
+LS300-WB55RE.build.f_cpu=64000000L
+LS300-WB55RE.build.board=STM32WB_LS300
+LS300-WB55RE.build.arch=stm32wb
+LS300-WB55RE.build.core=arduino
+LS300-WB55RE.build.mcu=cortex-m4
+LS300-WB55RE.build.architecture=armv7e-m
+LS300-WB55RE.build.fpu=fpv4-sp-d16
+LS300-WB55RE.build.float-abi=hard
+LS300-WB55RE.build.vid=0x1209
+LS300-WB55RE.build.pid=0x6674
+LS300-WB55RE.build.did=0x0100
+LS300-WB55RE.build.usb_manufacturer="Lacuna Space"
+LS300-WB55RE.build.usb_product="ls300"
+LS300-WB55RE.build.extra_flags=-DSTM32WB55xx -fsingle-precision-constant "-D__SYSTEM_CORE_CLOCK__={build.f_cpu}" {build.usb_flags} {build.storage_flags} {build.region_flags} {build.version_flags}
+LS300-WB55RE.build.ldscript=STM32WB55xx_FLASH.ld 
+LS300-WB55RE.build.openocdscript=openocd_scripts/ls300-wb55re.cfg
+LS300-WB55RE.build.variant=LS300-WB55RE
+LS300-WB55RE.build.variant_system_libs="-L{runtime.platform.path}/system/STM32WBxx/Lib" "-L{runtime.platform.path}/system/CMSIS/DSP/Lib" -lstm32wb55xx -larm_cortexM4lf_math
+LS300-WB55RE.build.variant_system_include="-I{runtime.platform.path}/system/CMSIS/Include" "-I{runtime.platform.path}/system/CMSIS/DSP/Include" "-I{runtime.platform.path}/system/CMSIS/Device/ST/STM32WBxx/Include" "-I{runtime.platform.path}/system/STM32WBxx/Include" 
+
+LS300-WB55RE.upload.tool=dfu-util
+LS300-WB55RE.upload.protocol=dfu
+LS300-WB55RE.upload.address=0x08000000
+LS300-WB55RE.upload.interface=0
+LS300-WB55RE.upload.vid=0x1209
+LS300-WB55RE.upload.pid=0x6674
+LS300-WB55RE.upload.use_1200bps_touch=false
+LS300-WB55RE.upload.wait_for_upload_port=false
+LS300-WB55RE.upload.native_usb=true
+LS300-WB55RE.upload.maximum_size=786432
+LS300-WB55RE.upload.maximum_data_size=196608
+
+LS300-WB55RE.menu.usb.cdc=Serial
+LS300-WB55RE.menu.usb.cdc.build.usb_type=1
+#LS300-WB55RE.menu.usb.cdc_msc=Serial + Mass Storage
+#LS300-WB55RE.menu.usb.cdc_msc.build.usb_type=2
+LS300-WB55RE.menu.usb.none=No USB
+LS300-WB55RE.menu.usb.none.build.usb_type=0
+
+LS300-WB55RE.menu.region_flags.EU868=Europe 868
+LS300-WB55RE.menu.region_flags.EU868.build.region=R_EU868
+LS300-WB55RE.menu.region_flags.US915=US 915
+LS300-WB55RE.menu.region_flags.US915.build.region=R_US915
+LS300-WB55RE.menu.region_flags.AU915=AU 915
+LS300-WB55RE.menu.region_flags.AU915.build.region=R_AU915
+LS300-WB55RE.menu.region_flags.AS923=Asia AS923
+LS300-WB55RE.menu.region_flags.AS923.build.region=R_AS923
+LS300-WB55RE.menu.region_flags.IN865=India 865
+LS300-WB55RE.menu.region_flags.IN865.build.region=R_IN865
+
+LS300-WB55RE.menu.storage.none=None
+LS300-WB55RE.menu.storage.none.build.storage_type=0
+#LS300-WB55RE.menu.storage.sflash=SFLASH
+#LS300-WB55RE.menu.storage.sflash.build.storage_type=1
+#LS300-WB55RE.menu.storage.sdspi=SDCARD
+#LS300-WB55RE.menu.storage.sdspi.build.storage_type=2
+
+LS300-WB55RE.menu.version_flags.V6=LS300 V1
+LS300-WB55RE.menu.version_flags.V6.build.version=BOARD_LS300_V1
+
+LS300-WB55RE.menu.speed.64=64 MHz
+LS300-WB55RE.menu.speed.64.build.f_cpu=64000000L
+LS300-WB55RE.menu.speed.32=32 MHz
+LS300-WB55RE.menu.speed.32.build.f_cpu=32000000L
+LS300-WB55RE.menu.speed.16=16 MHz (No USB)
+LS300-WB55RE.menu.speed.16.build.f_cpu=16000000L
+LS300-WB55RE.menu.speed.2=2 MHz (No USB)
+LS300-WB55RE.menu.speed.2.build.f_cpu=2000000L
 
 # Tlera Firefly
 # ---------------------------------------
