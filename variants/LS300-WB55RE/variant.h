@@ -79,15 +79,15 @@ extern "C"
 #define NUM_ANALOG_OUTPUTS   (0u)
 
 // LEDs
-#define LED_BUILTIN          (2u)
+#define LED_BUILTIN          (35u)
 
 /*
  * Analog pins
  */
 #define PIN_A0               (16ul)
 #define PIN_A1               (17ul)
-#define PIN_A2               (21ul)
-#define PIN_A3               (21ul)
+#define PIN_A2               (18ul)
+#define PIN_A3               (19ul)
 #define PIN_A4               (20ul)
 #define PIN_A5               (32ul)
 #define PIN_A6               (33ul)	
@@ -101,25 +101,12 @@ static const uint8_t A5  = PIN_A5;
 static const uint8_t A6  = PIN_A6;
 #define ADC_RESOLUTION		12
 
-#define PIN_BUTTON           (26)
+#define PIN_BUTTON 22
 static const uint8_t BUTTON = PIN_BUTTON;
 
-#define BOARD_LS200_V2 (0x02)
-#define BOARD_LS200_V3 (0x03)
-#define BOARD_LS200_V4 (0x04)
-#define BOARD_LS200_V5 (0x05)
-#define BOARD_LS300_V1 (0x06)
-
-#if BOARD_VERSION == BOARD_LS300_V1
-	#define LS300_V1
-	#define LS_BOARD_STRING "LS300 v1"
-#endif
-
-#define BME280_WIRE Wire
-#define LSM303_WIRE Wire
+#define LS_BOARD_STRING "LS300 v2.2"
 
 // LS300 BOARD
-// #define BOARD_LS200
 #define BOARD_LS300
 
 // LS300 battery (3.3 Volt)
@@ -128,88 +115,58 @@ static const uint8_t BUTTON = PIN_BUTTON;
 #define LS_BATVOLT_R2 2.0f
 
 // LS300 pins
-// Button PC4 
-#define LS_USER_BUTTON 26
-// LED PB5
-#define LS_LED_BLUE 2
-#define LS_LED 2
+#define USER_BUTTON PIN_BUTTON
+#define LED LED_BUILTIN
 
-// PC13 Unused
-// #define E22_RXEN 7
-// PB0 (pb3)
-#define E22_BUSY 27
-// PA0 (pa0)
-#define E22_NRST 16
-// PB4 (pb4)
-#define E22_DIO1 3
-// PA4
-#define E22_NSS 4
 
-#define LS_SKY_ANT 28
-#define LS_SKY_CSD 29
-#define LS_SKY_CTX 30
-#define LS_SKY_CPS 31
+#define LR1120_BUSY 27
+#define LR1120_NRST 16
+#define LR1120_DIO9 5
+#define LR1120_SPI_NSS 4
 
-// PB9
-#define SD_ENABLE 9
-// PB8
-#define SD_SS 8
-#define SDCARD_SS_PIN 8
+#define LR1120_LNA_CTRL 20
 
-// PC10
-#define LS_GPS_PPS 35
-// PA3
-#define LS_GPS_RX 19
-// PA2
-#define LS_GPS_TX 18
-// PB1
-#define LS_GPS_ENABLE 7
-#define LS_MODULE_ENABLE 7
-// PA15
-#define LS_GPS_INT 10
-// PE4
-#define LS_GPS_V_BCKP 24
-// PC0
-#define LS_GPS_STANDBY 36
+#define ANT_SEL 28
+#define CSD_MCU 29
+#define CTX 30
+#define CPS 31
+#define CHL 11
+#define CRX 12
 
-// PC3
-#define LS_BATVOLT_PIN 33
-// PC1
-#define LS_VERSION_MEAS 32
-// PC6
-#define LS_VERSION_ENABLE 34
 
-// PA1
-#define LS_HALL_OUT	17
-// PB3
-#define LS_HALL_ENABLE 5
+#define SD_CARD_ENABLE 26
+#define SD_CARD_NSS 10
 
-// PA8
-#define LS_LNA_CONTROL 20
-#define LS_SW2_V2 20
 
-// PA9
-#define LS_TX 1
-// PA10
-#define LS_RX 0
+#define 1PPS 9
+#define GPS_RXD 19
+#define GPS_TXD 18
+#define GPS_ENABLE 7
+#define LS_GPS_V_BCKP 8
 
-// PC5
-#define LS_ACC_INT2 37
-// PB2
-#define LS_ACC_INT1 6
-#define LS_INT3 6
 
-// Compatible LS200
-#define LS_INT_ACC_1 6
-#define LS_INT_ACC_2 37
-// PIN_NONE
-#define LS_INT_MAG 21
+#define VBAT_MEASURE 33
+#define VERSION_MEASURE 21
+#define VER_MEASURE_ENABLE 34
+
+
+#define HALL_OUT 23
+#define HALL_ENABLE 24
+
+
+#define TX 1
+#define RX 0
+
+
+#define ACC_INT2 37
+#define ACC_INT1 6
+
 
 /*
  * Serial interfaces
  */
 
-#define SERIAL_INTERFACES_COUNT 3
+#define SERIAL_INTERFACES_COUNT 2
 
 #define PIN_SERIAL1_RX       (0ul)
 #define PIN_SERIAL1_TX       (1ul)
@@ -222,8 +179,8 @@ static const uint8_t BUTTON = PIN_BUTTON;
  */
 #define SPI_INTERFACES_COUNT 1
 
-#define PIN_SPI_MOSI         (11u)
-#define PIN_SPI_MISO         (12u)
+#define PIN_SPI_MOSI         (2u)
+#define PIN_SPI_MISO         (3u)
 #define PIN_SPI_SCK          (13u)
 
 static const uint8_t SS	  = (4u);
@@ -255,7 +212,7 @@ static const uint8_t SCL = PIN_WIRE_SCL;
 /*
  * PDM Interfaces
  */
-#define PDM_INTERFACES_COUNT 1
+#define PDM_INTERFACES_COUNT 0
 
 #define PIN_PDM_CK           (8u)
 #define PIN_PDM_DIN          (9u)
