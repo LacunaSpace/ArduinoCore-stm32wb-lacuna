@@ -104,7 +104,19 @@ static const uint8_t A6  = PIN_A6;
 #define PIN_BUTTON 22
 static const uint8_t BUTTON = PIN_BUTTON;
 
-#define LS_BOARD_STRING "LS300 v2.2"
+// #define LS_BOARD_STRING "LS300 v2.2"
+
+#define BOARD_LS200_V2 (0x02)
+#define BOARD_LS200_V3 (0x03)
+#define BOARD_LS200_V4 (0x04)
+#define BOARD_LS200_V5 (0x05)
+#define BOARD_LS300_V1 (0x06)
+#define BOARD_LS300_V2 (0x07)
+
+#if BOARD_VERSION == BOARD_LS300_V1
+	#define LS300_V1
+	#define LS_BOARD_STRING "LS300 v2"
+#endif
 
 // LS300 BOARD
 #define BOARD_LS300
@@ -117,7 +129,7 @@ static const uint8_t BUTTON = PIN_BUTTON;
 // LS300 pins
 #define USER_BUTTON PIN_BUTTON
 #define LED LED_BUILTIN
-
+#define LS_LED LED_BUILTIN
 
 #define LR1120_BUSY 27
 #define LR1120_NRST 16
@@ -130,37 +142,62 @@ static const uint8_t BUTTON = PIN_BUTTON;
 #define CSD_MCU 29
 #define CTX 30
 #define CPS 31
+
+// ????
 #define CHL 11
 #define CRX 12
 
+#define LS_SKY_ANT 28
+#define LS_SKY_CSD 29
+#define LS_SKY_CTX 30
+#define LS_SKY_CPS 31
 
 #define SD_CARD_ENABLE 26
 #define SD_CARD_NSS 10
 
 
-#define 1PPS 9
+#define PPS 9
 #define GPS_RXD 19
 #define GPS_TXD 18
 #define GPS_ENABLE 7
+#define LS_GPS_ENABLE 7
 #define LS_GPS_V_BCKP 8
 
+#define LS_GPS_PPS 9
+#define LS_GPS_RX 19
+#define LS_GPS_TX 18
+#define LS_GPS_ENABLE 7
+#define LS_MODULE_ENABLE 7
+#define LS_GPS_INT 10
+#define LS_GPS_V_BCKP 8
+// #define LS_GPS_STANDBY
 
 #define VBAT_MEASURE 33
 #define VERSION_MEASURE 21
 #define VER_MEASURE_ENABLE 34
 
+#define LS_BATVOLT_PIN 33
+#define LS_VERSION_MEAS 21
+#define LS_VERSION_ENABLE 34
 
 #define HALL_OUT 23
 #define HALL_ENABLE 24
 
+#define LS_HALL_OUT	23
+#define LS_HALL_ENABLE 24
+
 
 #define TX 1
 #define RX 0
+#define LS_TX 1
+#define LS_RX 0
 
 
 #define ACC_INT2 37
 #define ACC_INT1 6
 
+#define LS_ACC_INT2 37
+#define LS_ACC_INT1 6
 
 /*
  * Serial interfaces
