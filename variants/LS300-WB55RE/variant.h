@@ -203,7 +203,7 @@ static const uint8_t BUTTON = PIN_BUTTON;
  * Serial interfaces
  */
 
-#define SERIAL_INTERFACES_COUNT 2
+#define SERIAL_INTERFACES_COUNT 3
 
 #define PIN_SERIAL1_RX       (0ul)
 #define PIN_SERIAL1_TX       (1ul)
